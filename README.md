@@ -3,7 +3,7 @@
 </p>
 
 
-# Author: CryptoDox.
+
 
 # A simple Scapy experience with Python3 !
 
@@ -11,8 +11,10 @@ Original def:
 "Scapy is a powerful Python-based interactive packet manipulation program and
 library. (...)"
 
-Sources :&#160;<a href="https://github.com/secdev/scapy" target="_blank">Git Development Version</a>
+Scapy sources :
 
-<a href="https://scapy.readthedocs.io/en/latest/index.html" target="_blank">Scapy documentation</a>
+&#160;<a href="https://github.com/secdev/scapy" target="_blank">Official development version.</a>
+
+&#160;<a href="https://scapy.readthedocs.io/en/latest/index.html" target="_blank">Official documentation.</a>
 
 
