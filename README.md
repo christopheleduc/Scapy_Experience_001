@@ -13,8 +13,8 @@ library. (...)"
 
 Scapy sources :
 
-&#160;<a href="https://github.com/secdev/scapy" target="_blank">Official development version.</a>
+* &#160;<a href="https://github.com/secdev/scapy" target="_blank">Official development version.</a>
 
-&#160;<a href="https://scapy.readthedocs.io/en/latest/index.html" target="_blank">Official documentation.</a>
+* &#160;<a href="https://scapy.readthedocs.io/en/latest/index.html" target="_blank">Official documentation.</a>
 
 
