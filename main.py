@@ -13,7 +13,7 @@
 __author__ = "Christophe LEDUC"
 __date__ =  "02 novembre 2019"
 
-import sys
+#import sys
 from scapy.all import sr1, IP, ICMP
 
 packet = IP()
