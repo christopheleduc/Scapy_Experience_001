@@ -62,3 +62,17 @@ print(repr(raw(pkt)))
 ans = sr([IP(dst="8.8.8.8", ttl=(1, 8), options=IPOption_RR())/ICMP(seq=RandShort()), IP(dst="8.8.8.8", ttl=(1, 8), options=IPOption_Traceroute())/ICMP(seq=RandShort()), IP(dst="8.8.8.8", ttl=(1, 8))/ICMP(seq=RandShort())], verbose=False, timeout=3)[0]
 ans.make_table(lambda x, y: (", ".join(z.summary() for z in x[IP].options) or '-', x[IP].ttl, y.sprintf("%IP.src% %ICMP.type%")))
 
+
+print("********************************************************************************")
+packet_new01 = Ether()/IP(dst="www.secdev.org")/TCP()
+packet_new01.summary()
+
+print(packet_new01.dst)  # first layer that has an src field, here Ether
+print(packet_new01[IP].src)  # explicitly access the src field of the IP layer
+
+# sprintf() is a useful method to display fields
+print(packet_new01.sprintf("%Ether.src% > %Ether.dst%\n%IP.src% > %IP.dst%"))
+
+print(packet_new01.sprintf("%TCP.flags% %TCP.dport%"))
+
+# [p for p in IP(ttl=(1,5))/ICMP()]
