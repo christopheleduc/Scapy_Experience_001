@@ -56,3 +56,9 @@ ans.multiplot(lambda x, y: (y[IP].src, (y.time, y[IP].id)), plot_xy=True)
 
 pkt = IP() / UDP() / DNS(qd=DNSQR())
 print(repr(raw(pkt)))
+
+
+
+ans = sr([IP(dst="8.8.8.8", ttl=(1, 8), options=IPOption_RR())/ICMP(seq=RandShort()), IP(dst="8.8.8.8", ttl=(1, 8), options=IPOption_Traceroute())/ICMP(seq=RandShort()), IP(dst="8.8.8.8", ttl=(1, 8))/ICMP(seq=RandShort())], verbose=False, timeout=3)[0]
+ans.make_table(lambda x, y: (", ".join(z.summary() for z in x[IP].options) or '-', x[IP].ttl, y.sprintf("%IP.src% %ICMP.type%")))
+
