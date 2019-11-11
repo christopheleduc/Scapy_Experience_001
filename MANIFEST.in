@@ -1,0 +1,2 @@
+include *.md *.ico LICENCE
+recursive-include doc *.jpg

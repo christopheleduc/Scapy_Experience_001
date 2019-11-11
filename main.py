@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# main : main
 #coding:utf-8
 
 # This file is part of a simple Scapy experience with Python3
@@ -6,10 +7,6 @@
 # Copyright (C) CryptoDox <cryptodox@cryptodox.net>
 # This program is published under a GPLv2 license
 
-"""
-   Divers cas d'utilisation
-   de Scapy
-"""
 __author__ = "Christophe LEDUC"
 __date__ =  "02 novembre 2019"
 
@@ -21,6 +18,13 @@ __date__ =  "02 novembre 2019"
 from scapy.all import *
 from scapy.utils import *
 import matplotlib
+
+"""
+   Divers cas d'utilisation
+   de Scapy
+"""
+
+__version__ = "0.0.1"
 
 packet = IP()
 print (packet.show())

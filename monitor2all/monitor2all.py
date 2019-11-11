@@ -7,18 +7,28 @@
 # Copyright (C) CryptoDox <cryptodox@cryptodox.net>
 # This program is published under a GPLv2 license
 
-"""
-Ecoute constamment toutes les interfaces sur une machine 
-et imprime toutes les requêtes ARP qu'elle voit, 
-y-compris sur les frames 802.11 d'une carte Wi-Fi en mode moniteur
-"""
 __author__ = "Christophe LEDUC"
 __date__ =  "03 novembre 2019"
 
+"""
+    Implémentation de l'écoute des requêtes ARP
+
+    Usage:
+
+    >>> from monitor2all import sniffer
+    >>> sniffer()
+"""
+
 from scapy.all import *
+
+__all__ = ['sniffer']
 
 def arp_monitor_callback(pkt):
     if ARP in pkt and pkt[ARP].op in (1,2): #who-has or is-at
         return pkt.sprintf("%ARP.hwsrc% %ARP.psrc%")
 
-sniff(prn=arp_monitor_callback, filter="arp", store=0)
+def sniffer():
+    sniff(prn=arp_monitor_callback, filter="arp", store=0)
+
+if __name__ == '__main__':
+    sniffer()
